@@ -1,0 +1,88 @@
+#main-thumbs > .third {
+    height: 200px;
+}
+#main-thumbs > .first {
+    height: 400px;
+}
+
+#main-thumbs > .second {
+    height: 200px;
+}
+
+#main-thumbs > div {
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    cursor: pointer;
+    border: 3px solid #ffffff;
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #main-thumbs > .second {
+        height: 400px;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+    #main-thumbs > .first {
+        height: 200px;
+    }
+}
+
+.navbar-brand > img {
+    height:35px;
+    margin-top: -5px;
+}
+
+.navbar {
+    background-color: rgba(255,255,255,.5);
+}
+
+body {
+    margin-top: 50px;
+}
+
+#loadmore {
+    text-align: center;
+    font-size: 2em;
+    cursor: pointer;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ddd;
+    border: 1px solid #aaaaaa;
+    width: 50%;
+}
+
+#copyright {
+    text-align: center;
+}
+
+#main-thumbs > div:hover > .thumb-txt {
+    background-color: rgba(255,255,255,.8);
+    transition: .5s;
+}
+
+.thumb-txt {
+    position: absolute;
+    background-color: rgba(255,255,255,.5);
+    bottom:10px;
+    width: 100%;
+    left: 0;
+    padding-left: 10px;
+}
+
+.thumb-txt h1 {
+    font-size: 16px;
+    line-height: 100%;
+    margin: 10px 0;
+}

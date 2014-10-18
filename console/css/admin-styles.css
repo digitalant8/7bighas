@@ -1,0 +1,21 @@
+
+header h1 {
+    margin-left: 20px;
+}
+
+.results-display {
+    font-size: 10px;
+}
+
+#admin-login-form {
+    width:300px;
+    margin: 0 auto;
+}
+
+.bselect-label, .bselect-caret {
+    height: auto;
+}
+
+input[type="file"] {
+    height: 100%;
+}
