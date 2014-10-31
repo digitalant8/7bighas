@@ -60,12 +60,30 @@ $phone) {
         return $r;
     }
 
-    public static function insertProp($user, $dev, $name, $desc, $address, $street, $city, $state, $landmarks){
+    public static function insertProp($user, $dev, $name, $desc, $address, $street, $city, $state){
         $sql = "INSERT INTO properties (prop_id, prop_user_id, prop_dev_id, prop_name,
-        prop_description, prop_address, prop_street, prop_city, prop_state, prop_landmarks) VALUES ('',
+        prop_description, prop_address, prop_street, prop_city, prop_state) VALUES ('',
         '".$user."','".$dev."', '".$name."', '".$desc."', '".$address."',
-        '".$street."', '".$city."', '".$state."', '".$landmarks."')";
+        '".$street."', '".$city."', '".$state."')";
         $r = DBobj::runQueryReturnId($sql);
+        return $r;
+    }
+
+    public static function insertUnit ($unit_prop_id, $unit_name, $unit_desc, $unit_area, $unit_price) {
+        $sql="INSERT INTO unit (unit_id, unit_prop_id, unit_name, unit_desc, unit_area, unit_price) VALUES ('', '".$unit_prop_id."', '".$unit_name."', '".$unit_desc."', '".$unit_area."', '".$unit_price."')";
+        $r = DBobj::runQueryReturnId($sql);
+        return $r;
+    }
+
+    public static function insertUnitPhoto ($unit_id, $unit_photo_alt) {
+        $sql = "INSERT INTO unit_photos (unit_photo_id, unit_id, unit_photo_alt) VALUES ('', '".$unit_id."', '".$unit_photo_alt."')";
+        $r = DBobj::runQueryReturnId($sql);
+        return $r;
+    }
+
+    public static function insertFeature ($feature_unit_id, $feature_key, $feature_value) {
+        $sql = "INSERT INTO unit_features (feature_id, feature_unit_id, feature_key, feature_value) VALUES ('', '".$feature_unit_id."', '".$feature_key."', '".$feature_value."')";
+        $r = DBobj::runQuery($sql);
         return $r;
     }
 
@@ -124,6 +142,7 @@ $phone) {
         }
         return $r;
     }
+
     public static function devFetchAllIds () {
         $r = array();
         $sql =  "SELECT dev_id, dev_name FROM developers ORDER BY dev_name ASC";

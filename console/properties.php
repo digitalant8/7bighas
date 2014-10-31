@@ -6,7 +6,7 @@ include_once('inc/admin.class.php');
 echo Admin::makeHead('Add Properties - 7bighas.com - Admin Console');
 ?>
 
-    <div class="col-sm-3"> <!-- start middle column -->
+    <div class="col-sm-8"> <!-- start middle column -->
         <?php
         if (isset($_POST['name']) && isset($_POST['user'])) {
 
@@ -17,14 +17,13 @@ echo Admin::makeHead('Add Properties - 7bighas.com - Admin Console');
             $street = (isset($_POST['street']) ? $_POST['street'] : '');
             $city = (isset($_POST['city']) ? $_POST['city'] : '');
             $state = (isset($_POST['state']) ? $_POST['state'] : '');
-            $landmarks = (isset($_POST['landmarks']) ? $_POST['landmarks'] : '');
 
             /* insert the property and return the property id */
             $prop_id = DBobj::insertProp($_POST['user'], $dev, $_POST['name'], $desc, $address, $street, $city,
-                $state, $landmarks);
+                $state);
             if ($prop_id) {
                 echo Admin::successAlert('Record was inserted successfully');
-                if (isset($_FILES['photo'])) {
+                if (isset($_FILES['photo']) && $_FILES["photo"]["error"] != 4) {
                     $alt = (isset($_POST['alt']) ? $_POST['alt'] : '');
 
                     /* adds a photo record using the property id returned above */
@@ -32,16 +31,14 @@ echo Admin::makeHead('Add Properties - 7bighas.com - Admin Console');
                     if ($photo_id) {
                         echo Admin::successAlert('Photo record was added successfully');
                     } else {
-                        echo '<div class="alert alert-danger" role="alert">Photo record was not added</div>';
+                        echo Admin::dangerAlert('Photo record was not added');
                     }
 
                     /* uploads the file */
                     if ($_FILES["photo"]["error"] > 0) {
-                        echo '<div class="alert alert-danger" role="alert">Error: ' . $_FILES["photo"]["error"] . '</div>';
+                        echo Admin::dangerAlert('Error: ' . $_FILES["photo"]["error"]);
                     } else {
-                        echo '<div class="alert alert-success" role="alert">Upload: ' . $_FILES["photo"]["name"] . '<br>';
-                        echo "Type: " . $_FILES["photo"]["type"] . "<br>";
-                        echo "Size: " . ($_FILES["photo"]["size"] / 1024) . " kB<br>";
+                        echo Admin::successAlert('Photo uploaded sucessfully ' . $_FILES["photo"]["name"]);
                         switch ($_FILES["photo"]["type"]) {
                             case "image/gif" :
                                 $type = ".gif";
@@ -55,7 +52,7 @@ echo Admin::makeHead('Add Properties - 7bighas.com - Admin Console');
                         }
                         move_uploaded_file($_FILES["photo"]["tmp_name"],
                             "upload/" . $photo_id . $type);
-                        echo "Stored in: " . "upload/" . $photo_id . $type . "</div>";
+                        echo Admin::successAlert('Stored in: upload/' . $photo_id . $type);
 
                         /* updates the property table to add the image id as a default image */
                         DBobj::setDefaultImage($prop_id, $photo_id);
@@ -97,6 +94,8 @@ echo Admin::makeHead('Add Properties - 7bighas.com - Admin Console');
                         ?>
                     </select>
                 </div>
+
+
                 <div class="form-group">
                     <label>Description</label><textarea name="description" placeholder="Description"
                                                         class="wysiwyg form-control"></textarea>
@@ -105,6 +104,8 @@ echo Admin::makeHead('Add Properties - 7bighas.com - Admin Console');
                     <label>Address</label><input type="text" name="address" placeholder="Address"
                                                  class="form-control"/>
                 </div>
+
+
                 <div class="form-group">
                     <label>Street</label><input type="text" name="street" placeholder="Street" autocomplete="on"
                                                 class="form-control"/>
@@ -179,7 +180,7 @@ echo Admin::makeHead('Add Properties - 7bighas.com - Admin Console');
     </div>
     <!-- end middle column -->
 
-    <div class="col-sm-7">
+    <div class="col-sm-4">
         <?php
         $result = DBObj::propFetchAll(10);
 
@@ -188,30 +189,14 @@ echo Admin::makeHead('Add Properties - 7bighas.com - Admin Console');
             <table class="table table-bordered table-hover table-striped results-display">
                 <tr>
                     <th>ID</th>
-                    <th>UID</th>
-                    <th>Dev ID</th>
                     <th>Name</th>
-                    <th>Description</th>
-                    <th>Address</th>
-                    <th>Street</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Landmarks</th>
                 </tr>
                 <?php
 
                 foreach ($result as $row) {
                     echo '<tr>';
                     echo '<td>' . $row['prop_id'] . '</td>';
-                    echo '<td>' . $row['prop_user_id'] . '</td>';
-                    echo '<td>' . $row['prop_dev_id'] . '</td>';
                     echo '<td>' . $row['prop_name'] . '</td>';
-                    echo '<td>' . substr($row['prop_description'], 0, 200) . '</td>';
-                    echo '<td>' . $row['prop_address'] . '</td>';
-                    echo '<td>' . $row['prop_street'] . '</td>';
-                    echo '<td>' . $row['prop_city'] . '</td>';
-                    echo '<td>' . $row['prop_state'] . '</td>';
-                    echo '<td>' . substr($row['prop_landmarks'], 0, 200) . '</td>';
                     echo '</tr>';
                 }
                 ?>

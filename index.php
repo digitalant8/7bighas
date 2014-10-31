@@ -1,74 +1,47 @@
 <?php
 include_once ('inc/ui.class.php');
 
-echo Ui::makeHead('7bighas.com - home page');
-?>
+echo Ui::makeContainerHead('7bighas.com - home page');
 
-<div class="container-fluid">
-    <div class="row" id="main-thumbs">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 first" style="background-image: url('propertypics/01.jpg')">
-            <div class="thumb-txt">
-                <h1>Akshay Apartments</h1>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 first" style="background-image: url('propertypics/02.jpg')
-        ">
-            <div class="thumb-txt">
-                <h1>Arunuday Apartments</h1>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-2 col-sm-4 col-xs-6 second" style="background-image: url('propertypics/03.jpg')
-        ">
-            <div class="thumb-txt">
-                <h1>Lila Heights</h1>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/04.jpg')">
-            <div class="thumb-txt">
-                <h1>Laxmi Niwas</h1>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/05.jpg')">
-            <div class="thumb-txt">
-                <h1>ABC Plaza</h1>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/06.jpg')">
-            <div class="thumb-txt">
-                <h1>Dona Apartments</h1>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/07.jpg')">
-            <div class="thumb-txt">
-                <h1>Protech Plaza</h1>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/08.jpg')">
-            <div class="thumb-txt">
-                <h1>Bombay Heights</h1>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/09.jpg')">
-            <div class="thumb-txt">
-                <h1>Grotech Apartment</h1>
-            </div>
-        </div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/10.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/11.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/12.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/13.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/14.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/15.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/16.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/17.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/18.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/19.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/20.jpg')"></div>
-        <div class="col-md-2 col-sm-4 col-xs-6 third" style="background-image: url('propertypics/21.jpg')"></div>
-    </div>
-    <div id="loadmore">Load More</div>
+?>
+<div class="row">
+    <div class="phold col-md-12" style="background-color: #888888; height: 400px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #aaaaaa; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #bbbbbb; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #aaaaaa; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #bbbbbb; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #aaaaaa; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #bbbbbb; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #aaaaaa; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #bbbbbb; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #aaaaaa; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #bbbbbb; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #aaaaaa; height: 100px;"></div>
+    <div class="col-md-1 col-sm-3 col-xs-6" style="background-color: #bbbbbb; height: 100px;"></div>
+
 </div>
 
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Title Here</h1>
+            <div style="background-color: #aaaaaa; width:100%; height: 200px;"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere cursus pharetra. Sed a maximus odio, viverra commodo eros. Nulla imperdiet molestie nulla eget scelerisque. In hac habitasse platea dictumst. Morbi elementum risus ligula, non ornare lectus vestibulum eget. Praesent eget egestas purus, eget aliquam enim. Aenean vel viverra nunc. Maecenas et molestie neque. Donec tincidunt laoreet velit in sollicitudin. Suspendisse non ultrices nibh. Cras tincidunt non neque ac sodales. Nunc pulvinar dui aliquet pellentesque vehicula.</p>
+        </div>
+        <div class="col-md-4">
+            <h1>Title Here</h1>
+            <div style="background-color: #aaaaaa; width:100%; height: 200px;"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere cursus pharetra. Sed a maximus odio, viverra commodo eros. Nulla imperdiet molestie nulla eget scelerisque. In hac habitasse platea dictumst. Morbi elementum risus ligula, non ornare lectus vestibulum eget. Praesent eget egestas purus, eget aliquam enim. Aenean vel viverra nunc. Maecenas et molestie neque. Donec tincidunt laoreet velit in sollicitudin. Suspendisse non ultrices nibh. Cras tincidunt non neque ac sodales. Nunc pulvinar dui aliquet pellentesque vehicula.</p>
+        </div>
+        <div class="col-md-4">
+            <h1>Title Here</h1>
+            <div style="background-color: #aaaaaa; width:100%; height: 200px;"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere cursus pharetra. Sed a maximus odio, viverra commodo eros. Nulla imperdiet molestie nulla eget scelerisque. In hac habitasse platea dictumst. Morbi elementum risus ligula, non ornare lectus vestibulum eget. Praesent eget egestas purus, eget aliquam enim. Aenean vel viverra nunc. Maecenas et molestie neque. Donec tincidunt laoreet velit in sollicitudin. Suspendisse non ultrices nibh. Cras tincidunt non neque ac sodales. Nunc pulvinar dui aliquet pellentesque vehicula.</p>
+        </div>
+    </div>
+
+
+
+
 <?php
-echo Ui::makeFooter();
+echo Ui::makeContainerFooter();
 ?>

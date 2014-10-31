@@ -25,13 +25,13 @@ class Admin
                         </header> <!-- end first row -->
 
                         <div class="row">
-                            <div class="col-sm-2">
+                            <div class="col-sm-1">
                                     <ul class="nav nav-pills nav-stacked">
                                         <li><a href="admin-users.php">Admin</a></li>
                                         <li><a href="properties.php">Properties</a></li>
                                         <li><a href="developers.php">Developers</a></li>
                                         <li><a href="users.php">Users</a></li>
-                                        <li><a href="#">Units</a></li>
+                                        <li><a href="units.php">Units</a></li>
                                         <li><a href="photos.php">Photos</a></li>
                                         <li><a href="logout.php">Logout</a></li>
                                     </ul>
@@ -46,18 +46,17 @@ class Admin
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
             <script src="https://anothercdn.googlecode.com/files/jquery.lazyload.js"></script>
-            <script src="js/jquery.tinymce.min.js"></script>
+            <script src="../ckeditor/ckeditor.js"></script>
+    <script src="../ckeditor/adapters/jquery.js"></script>
             <script type="text/javascript" src="js/admin-custom.js"></script>
             <script src="../js/bselect.min.js" type="text/javascript"></script>
             <script type="text/javascript">
                 $("select").bselect();
-                tinymce.init({
-                    selector: ".wysiwyg",
-                    theme: "modern"
-                });
-</script>
-</body>
-</html>';
+                $(".wysiwyg").ckeditor();
+            </script>
+
+            </body>
+            </html>';
         return $r;
     }
 
